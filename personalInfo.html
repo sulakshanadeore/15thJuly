@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+function saveData() {
+    var fname=document.getElementById("firstname").value;
+    sessionStorage.setItem("custname",fname);
+
+}
+
+function DisplayData() {
+    var customername=sessionStorage.getItem("custname");
+    alert(customername);
+}
+
+function  CallClear() {
+    var l=localStorage.length;
+    alert(l);
+    localStorage.clear();
+}
+
+function ShowDate() {
+    var d=new Date();
+    var dy=d.getDate();
+    var d1=d.getMonth()+1;
+    var d2=d.getFullYear();
+
+    document.getElementById("showDate").value=d + d1 + d2;
+}
+function AreaOfCircle() {
+    var r=document.getElementById("r").value;
+    var a=Math.PI*r*r;
+    alert(a);
+    
+}
+
+function stringFuns(){
+var carname="Alto";
+var cname="Maruti";
+alert(carname.length);
+alert(carname.concat(cname));
+alert(carname.charAt(1));
+
+}
+
+        </script>
+    </head>
+    <body>
+        
+        <form style="background-color: darkseagreen;" >
+            <label for="fname">enter firstname</label>
+            <input type="text" name="fname" id="firstname" />
+
+
+<br/>
+<br/>
+<input type="number" id="r" />
+<input type="button" value="CalculateArea" onclick="AreaOfCircle()" />
+<input type="text" id="showDate" onmousemove="ShowDate()"/>
+<input type="button" value="StringFuns" onclick="stringFuns()"/>
+            <input type="submit" value="Save" onclick="saveData()" />
+            <input type="button" value="Display" onclick="DisplayData()" />
+            <input type="button" value="Clear" onclick="CallClear()" />
+
+
+        </form>
+
+        <script>
+            function showMessage() {
+                alert("This is message from the script body of page.. Pls fill in the data below...");
+            }
+        </script>
+
+    </body>
+</html>

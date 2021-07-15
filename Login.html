@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+                background-color: darkorange;
+            }
+        </style>
+<script>
+    // alert("Welcome to App... Pls login here");
+// function add(){
+// var no1=window.prompt("enter 1st number",10);
+// var no2=prompt("enter 2nd number");
+// var ans=parseFloat(no1)+parseFloat(no2);
+// alert(ans);
+
+
+// }
+
+function userdata()
+{
+var t;
+var userChoice=prompt("Enter your favorite snack");
+switch (userChoice) {
+    case "Lays":
+        t="You have entered " + userChoice;
+        
+        break;
+case "Frooti":
+t="You have entered " + userChoice;
+    break;
+    
+}
+// alert(t);
+console.log(t);
+}
+
+
+
+function validateUser()
+{
+
+var userid=window.document.getElementById("userid").value;
+alert(userid);
+var p=document.getElementById('userPwd').value;
+alert(p);
+if(userid=="abc" && p=="abc") 
+{getItem
+
+    //localStorage.setItem("username",userid);
+    sessionStorage.setItem("username",userid);
+
+    sessionStorage.setItem("usersPassword",p);
+    var i=sessionStorage.length;
+alert("Number of items in session Storage" + i)
+
+alert("Thanks for logging to our app dear " + sessionStorage.("username"));
+
+}
+
+}
+function CallClear() {
+
+    localStorage.clear();
+}
+</script>
+
+    </head>
+    <body >
+        <!-- onload="add()" -->
+
+        <form id="userlogin" method="POST">
+<fieldset>
+    <legend>Login</legend>
+    <label for="username">Username</label>
+    <input type="text" name="username" id="userid" />
+    <br/>
+    <br/>
+    <label for="pwd">Password</label>
+    <input type="text" name="pwd" id="userPwd" />
+    <input type="submit" value="Login"  id="login" onclick="validateUser()"/>
+    <input type="button" value="Clear" id="brnclear" onclick="CallClear()"/>
+<input type="button" value="UserLoginUsingButton" onclick="userdata()"/>
+</fieldset>
+        </form>
+    </body>
+</html>

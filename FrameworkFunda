@@ -1,0 +1,101 @@
+//GAC---shared
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+//-assembly--logical grouping of related classes
+//Console App--exe
+//Library--- dll
+namespace ConsoleApp7
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            //Entry point
+            //Ctrl+ K+C----- Comment
+            //Ctrl + K + U----- Uncomment
+            //  Console.WriteLine("Hello");
+            //  Console.WriteLine("World");
+
+            //  int i,j,ans;
+            //  float price;
+            //  double area;
+            //  short p;
+            //  byte k;
+
+            //  object s;
+            ////int/float/double/date/time
+
+            //  i = 10;
+            //  string name = "IBM";
+            //  s = name;
+            //  Type t = s.GetType();
+            //  Console.WriteLine("s Get Type " + t.FullName);
+
+            //10 object type
+            //Object conversion to string
+            // string s1 =s.ToString();
+
+            //j = (int)s;
+            // Console.WriteLine("Value in j= " + j);
+            // Console.WriteLine("Value in s1=" + s1);
+            // Console.WriteLine("Value in s =" + s);
+
+            //Console.WriteLine("Enter the value of pi");
+            //price = Convert.ToSingle(Console.ReadLine());
+
+            //Console.WriteLine("Enter a number");
+            ////Console is a class, ReadLine and Writeline are methods
+            //    i = Convert.ToInt32(Console.ReadLine());
+            //Console.WriteLine("Enter second number");
+            //j= Convert.ToInt32(Console.ReadLine());
+            //ans = i + j;
+            //Console.WriteLine(ans);
+
+            int i = 1;
+            float g = 333.33f;
+            object o = "10";
+            string s = "10";
+            //Console.WriteLine("Object equals integer= " + o.Equals(s));
+            Console.WriteLine(g.GetHashCode());
+            Console.WriteLine(i.GetHashCode());
+            Console.WriteLine(o.GetHashCode());
+            Console.WriteLine(s.GetHashCode());
+
+
+
+            // string s = "10";
+            // object o1 = s;
+            // Console.WriteLine(o.Equals(o1));
+
+            //int i;//int is not object//4 bytes
+            //object o;//big 
+            //o = 10;//object is int
+            //Produce same hashcode--- then only equal
+            //hashcode of value
+
+
+
+            //string s1 = "10";
+
+            //Console.WriteLine("Object equals string= " + o.Equals(s));
+            //Console.WriteLine("String equals string" + s.Equals(s1));
+
+
+
+
+
+
+            //(< -----without) Ctrl + F5
+
+
+            Console.Read(); 
+            //Console.ReadLine();
+
+
+        }
+    }
+}

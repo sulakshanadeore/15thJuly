@@ -1,0 +1,31 @@
+class Demo1
+    {
+        static void add(int i, int j,out int ans)
+        {
+            ans = i + j;
+        }
+        static void calculations(int i, int j, out int muloutput, out int divoutput,out int remainder)
+        {
+            muloutput = i * j;
+            divoutput = i / j;
+            remainder = i % j;
+        }
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter 1st number");
+            int no1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter 2nd number");
+            int no2= Convert.ToInt32(Console.ReadLine());
+            int m_answer, d_answer,r_answer;
+            calculations(no1, no2, out m_answer, out d_answer,out  r_answer);
+            Console.WriteLine("Multiplication= " + m_answer);
+            Console.WriteLine("Division=" + d_answer);
+            Console.WriteLine("Remainder=" + r_answer);
+
+
+            //int answer=0;
+            //add(no1, no2, out answer);
+            //Console.WriteLine(answer);
+            Console.Read();
+        }
+    }

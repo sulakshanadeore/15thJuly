@@ -1,0 +1,106 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace FirstApp
+{
+    class Program
+    {
+        //No object creation for calling static member    
+        //it remembers the previous values
+        //it creates only a single location where the value of the variable is updated and so it always remembers the previous value
+
+        static int counter = 1;
+        static int add(int fno, int sno)
+        {
+            int ans=0;
+            ans = fno + sno;
+            return ans;
+        }
+        static void Main(string[] args)
+        {
+
+            //Console.WriteLine(counter);
+            //counter = counter + 1;
+            //Console.WriteLine(counter);
+            int i, j, answer = 0;
+            //answer = Calculations(out i, out j, answer);
+
+            //answer =add(i, j);
+
+            //Console.WriteLine(answer);
+
+            Console.WriteLine("Enter number");
+            i = Convert.ToInt32(Console.ReadLine());
+            //while --- the condition is true
+            while (i!=0)
+            {
+                Console.WriteLine("You have entered " + i);
+                int no;
+                for (int cnt = 1; cnt < 11; cnt++)
+                {
+                    no = cnt * i;
+                    Console.WriteLine(no);
+                }
+                break;
+            }
+
+
+
+
+
+
+
+            Console.ReadLine();
+
+
+        }
+
+        private static int Calculations(out int i, out int j, int answer)
+        {
+            Console.WriteLine("Enter First No");
+            i = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter Second No");
+            j = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Pls enter your choice -- 1.add 2.sub 3. multiply 4. exit");
+            int userchoice = Convert.ToInt32(Console.ReadLine());
+
+            switch (userchoice)
+            {
+                case 1:
+                    answer = Program.add(i, j);
+                    Console.WriteLine("The calculation of {0} +  {1} is equal to {2}", i, j, answer);
+                    break;
+                case 2:
+                    answer = Subtract(i, j);
+                    Console.WriteLine("The calculation of {0} -  {1} is equal to {2}", i, j, answer);
+                    break;
+                case 3:
+                    answer = Multiply(i, j);
+                    Console.WriteLine("The calculation of {0}  *  {1} is equal to {2}", i, j, answer);
+                    break;
+                case 4:
+                    Console.WriteLine("You are exiting the runtime");
+                    Console.ReadLine();
+                    Environment.Exit(1);
+                    break;
+
+            }
+
+            return answer;
+        }
+
+        private static int Multiply(int i, int j)
+        {
+            return i * j;
+        }
+
+        private static int Subtract(int i, int j)
+        {
+            return i - j;
+        }
+
+    }
+}

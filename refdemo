@@ -1,0 +1,80 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace FirstApp
+{
+    class Demo1
+    {
+
+
+        static void add(int i, int j,out int ans)
+        {
+            ans = i + j;
+        }
+        static void calculations(int i, int j, out int muloutput, out int divoutput,out int remainder)
+        {
+            muloutput = i * j;
+            divoutput = i / j;
+            remainder = i % j;
+        }
+
+        static void SwapNos(int i, int j)
+        {
+            //i = 100;
+            //j = 200;
+            Console.WriteLine("Initial Value of i=" + i);
+            Console.WriteLine("Initial Value of j=" + j);
+            int k = i;
+            i = j;
+            j = k;
+            Console.WriteLine("Swapped Value of i="  + i);
+            Console.WriteLine("Swapped Value of j=" + j);
+        }
+
+
+        static void SwapNosRef(ref int i, ref int j)
+        {
+            //i = 100;
+            //j = 200;
+            Console.WriteLine("Initial Value of i=" + i);
+            Console.WriteLine("Initial Value of j=" + j);
+            int k = i;
+            i = j;
+            j = k;
+            Console.WriteLine("Swapped Value of i=" + i);
+            Console.WriteLine("Swapped Value of j=" + j);
+        }
+
+
+
+        static void Main(string[] args)
+        {
+            int no1 = 100;
+            int no2 = 200;
+            SwapNosRef(ref no1, ref no2);
+            Console.WriteLine("Value of no1= " + no1);
+            Console.WriteLine("Value of no2= " + no2);
+
+
+
+            //Console.WriteLine("Enter 1st number");
+            //int no1 = Convert.ToInt32(Console.ReadLine());
+            //Console.WriteLine("Enter 2nd number");
+            //int no2= Convert.ToInt32(Console.ReadLine());
+            //int m_answer, d_answer,r_answer;
+            //calculations(no1, no2, out m_answer, out d_answer,out  r_answer);
+            //Console.WriteLine("Multiplication= " + m_answer);
+            //Console.WriteLine("Division=" + d_answer);
+            //Console.WriteLine("Remainder=" + r_answer);
+
+
+            //int answer=0;
+            //add(no1, no2, out answer);
+            //Console.WriteLine(answer);
+            Console.Read();
+        }
+    }
+}

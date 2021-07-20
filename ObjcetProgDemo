@@ -1,0 +1,122 @@
+class Program
+    {
+        static void Main(string[] args)
+        {
+            char ans;
+            //Employee emp = new Employee();//instance or object----heap----default constructor
+
+            //Employee emp1 = new Employee();
+
+            Manager mgr1 = new Manager();
+            Manager mgr2 = new Manager();
+            do
+            {
+                Console.WriteLine("Press 1 to add employee 2 for AcceptDetails 3. DisplayDetails");
+                int choice = Convert.ToInt32(Console.ReadLine());
+                switch (choice)
+                {
+                    case 1:
+                        Employee.AddEmployee();
+                        break;
+                    case 2:
+                        //emp.AcceptDetails();
+                        //emp1.AcceptDetails();
+                        Console.WriteLine("Enter Deptname");
+                        mgr1.Deptname = Console.ReadLine();
+
+
+
+                        break;
+
+                    case 3:
+                        //emp.ShowDetails();
+                        //emp1.ShowDetails();
+                        Console.WriteLine(mgr1.Deptname);
+                        break;
+                        //default:
+                        //    break;
+                }
+                Console.WriteLine("Do u want to do another operation");
+                ans = Convert.ToChar(Console.ReadLine());
+            } while (ans == 'Y' || ans == 'y');
+Console.ReadLine();
+}
+----------------------------------------------------------------------------------------------------------------------------
+
+public class Manager
+    {
+        private string _deptname;
+
+        //Display & Accept Deptname----
+        //get--returning/retrieving   & set---Accepting/Assigning
+        //Feature---smart method ---for accept & for display---validation
+        public string Deptname
+        {
+            get {  return _deptname;    }
+            set
+            {
+                if (value.Length >= 1)
+                {
+                    _deptname = value;
+                }
+                else
+                {
+                    Console.WriteLine("Deptname cannot be blank");
+                }
+                
+            
+            }
+        
+        }
+
+
+    }
+    -----------------------------------------------------------------------------------
+    public class Employee
+    {
+        //single responsibility
+
+        //Add the reference of the library in the application
+        //variable/method-void&return type/events/delegates(members)----encapsulation
+
+        static int empid;
+        int empno;
+        private int _projectCode;//stack
+        private string _ename;
+        private string _city;
+
+
+        public static void AddEmployee()
+        {
+            //logic of adding employee
+            //complexity 
+            empid += 1;
+
+            Console.WriteLine("Your Employee id= " + empid);
+        }
+        //instance member/method
+        public void ShowDetails()
+        {
+            Console.WriteLine("displaying Details");
+            Console.WriteLine("empno= " + empno);
+            Console.WriteLine("Ename=  " + _ename);
+            Console.WriteLine("City  " + this._city);
+            Console.WriteLine("Project   " + _projectCode);
+
+        }
+
+        public void AcceptDetails()
+        {
+            AddEmployee();//static method  can be called in non static method
+            empno = empid;//assign static variable to a non-static variable
+            Console.WriteLine("Enter Empname");
+            this._ename = Console.ReadLine();
+            Console.WriteLine("enter City");
+            _city = Console.ReadLine();
+            Console.WriteLine("Enter Project code");
+            _projectCode = Convert.ToInt32(Console.ReadLine());
+        }
+
+
+
+    }
